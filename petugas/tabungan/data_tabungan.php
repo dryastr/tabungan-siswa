@@ -33,11 +33,13 @@ while ($data = $sql->fetch_assoc()) {
 
 	<!-- /.box-header -->
 
-	<div class="alert alert-success alert-dismissible">
-		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-		<h4>
-			<i class="icon fa fa-info"></i> Info Tabungan
-		</h4>
+	<div class="alert alert-success alert-dismissible" style="padding: 15px">
+	<div class="d-flex justify-content-between align-items-center w-100 ">
+			<h4 class="ml-5">
+				<i class="icon fa fa-info"></i> Total Tarikan
+			</h4>
+			<i class="fi fi-sr-cross-circle mr-5" data-dismiss="alert" aria-hidden="true" style="margin-right: 15px; cursor: pointer"></i>
+		</div>
 
 		<h4>
 			Tot. Setoran :
