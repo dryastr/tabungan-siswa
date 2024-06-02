@@ -1,0 +1,102 @@
+@import url('https://cdn-uicons.flaticon.com/2.4.0/uicons-bold-rounded/css/uicons-bold-rounded.css');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://cdn-uicons.flaticon.com/2.4.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/2.4.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar-content .fi-br-bars-staggered {
+    font-size: 24px;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.navbar-custom-menu {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-custom-menu .nav > li > a {
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #fff;
+}
+
+.profile-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.dropdown-menu {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 200px;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.user-header {
+    text-align: center;
+    padding: 10px;
+}
+
+.user-header p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+}
+
+@keyframes rotate-down {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes rotate-up {
+    from {
+        transform: rotate(90deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.rotate-down {
+    animation: rotate-down 0.3s forwards;
+}
+
+.rotate-up {
+    animation: rotate-up 0.3s forwards;
+}
+
+#toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.card-dashboard{
+    padding: 7px;
+    border: none;
+    background-color: #fff2d6 !important;
+    color: #ffab00 !important;
+    margin-right: 20px;
+}
