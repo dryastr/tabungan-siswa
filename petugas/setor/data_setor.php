@@ -1,5 +1,11 @@
 <?php
 $data_nama = $_SESSION["ses_nama"];
+
+// Initialize $keyword variable
+$keyword = '';
+if (isset($_POST['search'])) {
+    $keyword = $_POST['keyword'];
+}
 ?>
 
 <section class="content-header">
@@ -7,7 +13,6 @@ $data_nama = $_SESSION["ses_nama"];
 		Transaksi
 		<small>Tarikan</small>
 	</h1>
-
 </section>
 
 <section class="content">
@@ -24,18 +29,30 @@ $data_nama = $_SESSION["ses_nama"];
 		while ($data = $sql->fetch_assoc()) {
 		?>
 			<h3>
-			<?php echo rupiah($data['total']);
-		} ?>
+				<?php echo rupiah($data['total']); ?>
 			</h3>
+		<?php } ?>
 	</div>
-
 
 	<div class="box box-primary">
 		<div class="box-header">
-			<a href="?page=add_setor" class="btn btn-primary">
-				<i class="glyphicon glyphicon-plus"></i> Tambah Data</a>
+            <div class="d-flex justify-content-between">
+                <a href="?page=MyApp/add_siswa" title="Tambah Data" class="btn btn-primary">
+                    <i class="glyphicon glyphicon-plus"></i> Tambah Data
+                </a>
 
-		</div>
+                <form method="post" class="form-inline" style="display: inline-block; margin-left: 10px;">
+                    <div class="d-flex">
+                        <div class="form-group">
+                            <input type="text" name="keyword" class="form-control" placeholder="Cari..." value="<?php echo htmlspecialchars($keyword); ?>">
+                        </div>
+                        <button type="submit" name="search" class="btn btn-default">
+                            <i class="glyphicon glyphicon-search"></i> Cari
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
 		<!-- /.box-header -->
 		<div class="box-body">
 			<div class="table-responsive">
@@ -54,48 +71,31 @@ $data_nama = $_SESSION["ses_nama"];
 					<tbody>
 
 						<?php
-
 						$no = 1;
-						$sql = $koneksi->query("select s.nis, s.nama_siswa, t.id_tabungan, t.setor, t.tgl, t.petugas from 
-				  tb_siswa s join tb_tabungan t on s.nis=t.nis 
-				  where jenis ='ST' order by tgl desc, id_tabungan desc");
+						$sql = $koneksi->query("SELECT s.nis, s.nama_siswa, t.id_tabungan, t.setor, t.tgl, t.petugas FROM tb_siswa s JOIN tb_tabungan t ON s.nis=t.nis WHERE jenis ='ST' AND (s.nis LIKE '%$keyword%' OR s.nama_siswa LIKE '%$keyword%') ORDER BY t.tgl DESC, t.id_tabungan DESC");
 						while ($data = $sql->fetch_assoc()) {
 						?>
 
 							<tr>
+								<td><?php echo $no++; ?></td>
+								<td><?php echo $data['nis']; ?></td>
+								<td><?php echo $data['nama_siswa']; ?></td>
+								<td><?php echo date("d M Y", strtotime($data['tgl'])); ?></td>
+								<td align="left"><?php echo rupiah($data['setor']); ?></td>
+								<td><?php echo $data['petugas']; ?></td>
 								<td>
-									<?php echo $no++; ?>
-								</td>
-								<td>
-									<?php echo $data['nis']; ?>
-								</td>
-								<td>
-									<?php echo $data['nama_siswa']; ?>
-								</td>
-								<td>
-									<?php $tgl = $data['tgl'];
-									echo date("d M Y", strtotime($tgl)) ?>
-								</td>
-								<td align="left">
-									<?php echo rupiah($data['setor']); ?>
-								</td>
-								<td>
-									<?php echo $data['petugas']; ?>
-								</td>
-								<td>
-
 									<a href="?page=edit_setor&kode=<?php echo $data['id_tabungan']; ?>" title="Ubah" class="btn btn-success btn-sm">
 										<i class="fi fi-sr-file-edit"></i>
 									</a>
 									<a href="?page=del_setor&kode=<?php echo $data['id_tabungan']; ?>" onclick="return confirm('Apakah anda yakin hapus data ini ?')" title="Hapus" class="btn btn-danger btn-sm">
 										<i class="fi fi-sr-trash"></i>
+									</a>
 								</td>
 							</tr>
 						<?php
 						}
 						?>
 					</tbody>
-
 				</table>
 			</div>
 		</div>
