@@ -33,18 +33,23 @@ if (isset($_POST['search'])) {
     </div>
 
     <div class="box box-primary">
-        <div class="box-header">
-            <a href="?page=add_tarik" class="btn btn-primary">
-                <i class="glyphicon glyphicon-plus"></i> Tambah Data</a>
+		<div class="box-header">
+            <div class="d-flex justify-content-between">
+                <a href="?page=MyApp/add_siswa" title="Tambah Data" class="btn btn-primary">
+                    <i class="glyphicon glyphicon-plus"></i> Tambah Data
+                </a>
 
-            <form method="post" class="form-inline" style="display: inline-block; margin-left: 10px;">
-                <div class="form-group">
-                    <input type="text" name="keyword" class="form-control" placeholder="Cari..." value="<?php echo htmlspecialchars($keyword); ?>">
-                </div>
-                <button type="submit" name="search" class="btn btn-default">
-                    <i class="glyphicon glyphicon-search"></i> Cari
-                </button>
-            </form>
+                <form method="post" class="form-inline" style="display: inline-block; margin-left: 10px;">
+                    <div class="d-flex">
+                        <div class="form-group">
+                            <input type="text" name="keyword" class="form-control" placeholder="Cari..." value="<?php echo htmlspecialchars($keyword); ?>">
+                        </div>
+                        <button type="submit" name="search" class="btn btn-default">
+                            <i class="glyphicon glyphicon-search"></i> Cari
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
         <div class="box-body">
             <div class="table-responsive">
