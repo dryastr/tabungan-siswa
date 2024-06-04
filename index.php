@@ -72,7 +72,7 @@ while ($data = $sql->fetch_assoc()) {
 				</span>
 			</a>
 			<!-- Header Navbar: style can be found in header.less -->
-			<nav class="navbar navbar-static-top">
+			<nav class="navbar navbar-static-top" style="background-color: #d7f5fc !important;">
 				<!-- Sidebar toggle button-->
 				<div class="navbar-content">
 					<i class="fi fi-br-bars-staggered" data-toggle="offcanvas" role="button" style="color: #566a7f;"></i>
@@ -101,7 +101,7 @@ while ($data = $sql->fetch_assoc()) {
 		<!-- =============================================== -->
 
 		<!-- Left side column. contains the sidebar -->
-		<aside class="main-sidebar">
+		<aside class="main-sidebar" style="background-color: #d7f5fc !important;">
 			<!-- sidebar: style can be found in sidebar.less -->
 			<section class="sidebar">
 				<!-- Sidebar user panel -->

@@ -110,45 +110,56 @@
 	<!-- /.box-body -->
 
 	<!-- Main content -->
+<?php
+$keyword = '';
+if (isset($_POST['search'])) {
+    $keyword = $_POST['keyword'];
+}
+?>
+
 <section class="content pt-0">
-		<div class="row">
+    <div class="row">
+		<div class="p-0" style="background-color: #fff;">
+			<div class="d-flex align-items-center justify-content-between">
 				<div class="box-header">
 					<strong>Profil Sekolah</strong>
 				</div>
-				<div class="p-0" style="background-color: #fff;">
-					<table class="table table-striped table-responsive m-0">
-						<thead>
-							<tr>
-								<th>Nama Sekolah</th>
-								<th>Alamat</th>
-								<th>Akreditasi</th>
-							</tr>
-						</thead>
-						<tbody>
+				<!-- Search form -->
+				<form method="post" class="form-inline p-3">
+					<div class="d-flex">
+						<div class="form-group">
+							<input type="text" name="keyword" class="form-control" placeholder="Cari..." value="<?php echo htmlspecialchars($keyword); ?>">
+						</div>
+						<button type="submit" name="search" class="btn btn-default ml-2">
+							<i class="glyphicon glyphicon-search"></i> Cari
+						</button>
+					</div>
+				</form>
+			</div>
 
-							<?php
-								$sql = $koneksi->query("select * from tb_profil");
-								while ($data= $sql->fetch_assoc()) {
-							?>
-
-							<tr>
-								<td>
-									<?php echo $data['nama_sekolah']; ?>
-								</td>
-								<td>
-									<?php echo $data['alamat']; ?>
-								</td>
-								<td>
-									Akreditasi
-									<?php echo $data['akreditasi']; ?>
-								</td>
-							</tr>
-							<?php
-								}
-							?>
-						</tbody>
-
-					</table>
-				</div>
-		</div>
+            <table class="table table-striped table-responsive m-0">
+                <thead>
+                    <tr>
+                        <th>Nama Sekolah</th>
+                        <th>Alamat</th>
+                        <th>Akreditasi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $sql = $koneksi->query("SELECT * FROM tb_profil WHERE nama_sekolah LIKE '%$keyword%' OR alamat LIKE '%$keyword%' OR akreditasi LIKE '%$keyword%'");
+                    while ($data = $sql->fetch_assoc()) {
+                    ?>
+                    <tr>
+                        <td><?php echo $data['nama_sekolah']; ?></td>
+                        <td><?php echo $data['alamat']; ?></td>
+                        <td><?php echo 'Akreditasi ' . $data['akreditasi']; ?></td>
+                    </tr>
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </section>
