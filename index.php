@@ -46,11 +46,12 @@ while ($data = $sql->fetch_assoc()) {
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
 	<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
-	
+
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
-		a{
+
+		a {
 			text-decoration: none;
 		}
 	</style>
@@ -63,8 +64,11 @@ while ($data = $sql->fetch_assoc()) {
 		<header class="main-header">
 			<!-- Logo -->
 			<a href="index.php" class="logo">
-				<span class="logo-lg">
-					<b>TABUNGAN SISWA</b>
+				<span class="logo-lg" style="position: relative; left: -20px">
+					<div class="d-flex align-items-center justify-content-center">
+						<img src="dist/img/logo.png" alt="" width="50">
+						<b>TABSIS</b>
+					</div>
 				</span>
 			</a>
 			<!-- Header Navbar: style can be found in header.less -->
@@ -145,18 +149,18 @@ while ($data = $sql->fetch_assoc()) {
 
 								<li>
 									<a href="?page=MyApp/data_siswa">
-									<i class="fi fi-sr-users-alt mr-5"></i> Siswa</a>
+										<i class="fi fi-sr-users-alt mr-5"></i> Siswa</a>
 								</li>
 								<li>
 									<a href="?page=MyApp/data_kelas">
-									<i class="fi fi-sr-chalkboard-user"></i> Kelas</a>
+										<i class="fi fi-sr-chalkboard-user"></i> Kelas</a>
 								</li>
 							</ul>
 						</li>
 
 						<li class="treeview">
 							<a href="#">
-							<i class="fi fi-sr-wallet-arrow"></i>
+								<i class="fi fi-sr-wallet-arrow"></i>
 								<span style="font-size: 17px;">Transaksi</span>
 								<span class="pull-right-container">
 									<i id="toggle-icon" class="fi fi-rr-angle-small-right pull-right"></i>
@@ -166,22 +170,22 @@ while ($data = $sql->fetch_assoc()) {
 
 								<li>
 									<a href="?page=data_setor">
-									<i class="fi fi-sr-add"></i> Setoran</a>
+										<i class="fi fi-sr-add"></i> Setoran</a>
 								</li>
 								<li>
 									<a href="?page=data_tarik">
-									<i class="fi fi-sr-minus-circle"></i> Penarikan</a>
+										<i class="fi fi-sr-minus-circle"></i> Penarikan</a>
 								</li>
 								<li>
 									<a href="?page=view_kas">
-									<i class="fi fi-sr-info"></i> Info Kas</a>
+										<i class="fi fi-sr-info"></i> Info Kas</a>
 								</li>
 							</ul>
 						</li>
 
 						<li class="treeview">
 							<a href="?page=view_tabungan">
-							<i class="fi fi-sr-piggy-bank"></i>
+								<i class="fi fi-sr-piggy-bank"></i>
 								<span style="font-size: 17px;">Tabungan</span>
 								<span class="pull-right-container">
 								</span>
@@ -190,7 +194,7 @@ while ($data = $sql->fetch_assoc()) {
 
 						<li class="treeview">
 							<a href="?page=laporan">
-							<i class="fi fi-sr-newspaper"></i>
+								<i class="fi fi-sr-newspaper"></i>
 								<span style="font-size: 17px;">Laporan</span>
 								<span class="pull-right-container">
 								</span>
@@ -199,7 +203,7 @@ while ($data = $sql->fetch_assoc()) {
 
 						<li class="treeview">
 							<a href="?page=MyApp/data_pengguna">
-							<i class="fi fi-sr-system-cloud"></i>
+								<i class="fi fi-sr-system-cloud"></i>
 								<span style="font-size: 17px;">Pengguna Sistem</span>
 								<span class="pull-right-container">
 								</span>
@@ -208,14 +212,14 @@ while ($data = $sql->fetch_assoc()) {
 
 						<li class="treeview">
 							<a href="?page=MyApp/data_profil">
-							<i class="fi fi-sr-graduation-cap"></i>	
+								<i class="fi fi-sr-graduation-cap"></i>
 								<span style="font-size: 17px;">Profil Sekolah</span>
 								<span class="pull-right-container">
 								</span>
 							</a>
 						</li>
-					<?php 
-					} elseif ($data_level == "Kepalasekolah") { 
+					<?php
+					} elseif ($data_level == "Kepalasekolah") {
 					?>
 						<li class="treeview">
 							<a href="?page=admin">
@@ -238,18 +242,18 @@ while ($data = $sql->fetch_assoc()) {
 
 								<li>
 									<a href="?page=MyApp/data_siswa">
-									<i class="fi fi-sr-users-alt mr-5"></i> Siswa</a>
+										<i class="fi fi-sr-users-alt mr-5"></i> Siswa</a>
 								</li>
 								<li>
 									<a href="?page=MyApp/data_kelas">
-									<i class="fi fi-sr-chalkboard-user"></i> Kelas</a>
+										<i class="fi fi-sr-chalkboard-user"></i> Kelas</a>
 								</li>
 							</ul>
 						</li>
 
 						<li class="treeview">
 							<a href="#">
-							<i class="fi fi-sr-wallet-arrow"></i>
+								<i class="fi fi-sr-wallet-arrow"></i>
 								<span style="font-size: 17px;">Transaksi</span>
 								<span class="pull-right-container">
 									<i id="toggle-icon" class="fi fi-rr-angle-small-right pull-right"></i>
@@ -259,22 +263,22 @@ while ($data = $sql->fetch_assoc()) {
 
 								<li>
 									<a href="?page=data_setor">
-									<i class="fi fi-sr-add"></i> Setoran</a>
+										<i class="fi fi-sr-add"></i> Setoran</a>
 								</li>
 								<li>
 									<a href="?page=data_tarik">
-									<i class="fi fi-sr-minus-circle"></i> Penarikan</a>
+										<i class="fi fi-sr-minus-circle"></i> Penarikan</a>
 								</li>
 								<li>
 									<a href="?page=view_kas">
-									<i class="fi fi-sr-info"></i> Info Kas</a>
+										<i class="fi fi-sr-info"></i> Info Kas</a>
 								</li>
 							</ul>
 						</li>
 
 						<li class="treeview">
 							<a href="?page=view_tabungan">
-							<i class="fi fi-sr-piggy-bank"></i>
+								<i class="fi fi-sr-piggy-bank"></i>
 								<span style="font-size: 17px;">Tabungan</span>
 								<span class="pull-right-container">
 								</span>
@@ -283,7 +287,7 @@ while ($data = $sql->fetch_assoc()) {
 
 						<li class="treeview">
 							<a href="?page=laporan">
-							<i class="fi fi-sr-newspaper"></i>
+								<i class="fi fi-sr-newspaper"></i>
 								<span style="font-size: 17px;">Laporan</span>
 								<span class="pull-right-container">
 								</span>
@@ -292,7 +296,7 @@ while ($data = $sql->fetch_assoc()) {
 
 						<li class="treeview">
 							<a href="?page=MyApp/data_pengguna">
-							<i class="fi fi-sr-system-cloud"></i>
+								<i class="fi fi-sr-system-cloud"></i>
 								<span style="font-size: 17px;">Pengguna Sistem</span>
 								<span class="pull-right-container">
 								</span>
@@ -301,7 +305,7 @@ while ($data = $sql->fetch_assoc()) {
 
 						<li class="treeview">
 							<a href="?page=MyApp/data_profil">
-							<i class="fi fi-sr-graduation-cap"></i>	
+								<i class="fi fi-sr-graduation-cap"></i>
 								<span style="font-size: 17px;">Profil Sekolah</span>
 								<span class="pull-right-container">
 								</span>
@@ -331,18 +335,18 @@ while ($data = $sql->fetch_assoc()) {
 
 								<li>
 									<a href="?page=MyApp/data_siswa">
-									<i class="fi fi-sr-users-alt mr-5"></i> Siswa</a>
+										<i class="fi fi-sr-users-alt mr-5"></i> Siswa</a>
 								</li>
 								<li>
 									<a href="?page=MyApp/data_kelas">
-									<i class="fi fi-sr-chalkboard-user"></i> Kelas</a>
+										<i class="fi fi-sr-chalkboard-user"></i> Kelas</a>
 								</li>
 							</ul>
 						</li>
 
 						<li class="treeview">
 							<a href="?page=view_tabungan">
-							<i class="fi fi-sr-piggy-bank"></i>
+								<i class="fi fi-sr-piggy-bank"></i>
 								<span style="font-size: 17px;">Tabungan</span>
 								<span class="pull-right-container">
 								</span>
@@ -351,7 +355,7 @@ while ($data = $sql->fetch_assoc()) {
 
 						<li class="treeview">
 							<a href="?page=MyApp/data_profil">
-							<i class="fi fi-sr-graduation-cap"></i>	
+								<i class="fi fi-sr-graduation-cap"></i>
 								<span style="font-size: 17px;">Profil Sekolah</span>
 								<span class="pull-right-container">
 								</span>
@@ -387,7 +391,7 @@ while ($data = $sql->fetch_assoc()) {
 
 					<li>
 						<a href="logout.php" onclick="return confirm('Anda yakin keluar dari aplikasi ?')">
-						<i class="fi fi-br-sign-out-alt"></i>
+							<i class="fi fi-br-sign-out-alt"></i>
 							<span style="font-size: 17px;">Logout</span>
 							<span class="pull-right-container"></span>
 						</a>

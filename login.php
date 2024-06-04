@@ -15,6 +15,7 @@ include "inc/koneksi.php";
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"> -->
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"> -->
 	<!-- <link rel="stylesheet" href="dist/css/AdminLTE.min.css"> -->
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="dist/css/style.css">
 </head>
 
@@ -31,7 +32,10 @@ include "inc/koneksi.php";
 		</div>
 		<div class="login">
 			<div class="center">
-				<h2 class="form-title" id="login"><span>or</span>Log in</h2>
+				<div class="d-flex justify-content-center align-items-center">
+					<img src="https://www.kemdikbud.go.id/main/files/large/433664a7969f47f" width="70" alt="">
+				</div>
+				<h2 class="form-title" id="login" style="position: relative; left: -10px"><span>or</span>Log in</h2>
 				<div class="form-holder">
 					<form action="" method="post">
 						<input type="text" class="input" name="username" placeholder="Username" required>
