@@ -15,7 +15,7 @@ if (isset($_POST['search'])) {
     <div class="box box-primary">
         <div class="box-header">
             <div class="d-flex justify-content-between">
-                <a href="?page=MyApp/add_siswa" title="Tambah Data" class="btn btn-primary">
+                <a href="?page=MyApp/add_kelas" title="Tambah Data" class="btn btn-primary">
                     <i class="glyphicon glyphicon-plus"></i> Tambah Data
                 </a>
 
