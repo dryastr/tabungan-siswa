@@ -65,7 +65,7 @@ include "inc/koneksi.php";
             $_SESSION["ses_password"] = $data_login["password"];
             $_SESSION["ses_level"] = $data_login["level"];
 
-            if ($data_login["level"] == "orangtua") {
+            if ($data_login["level"] == "ortu" || "orangtua" || "Orangtua") {
                 echo "<script>
                     Swal.fire({title: 'Login Berhasil', text: '', icon: 'success', confirmButtonText: 'OK'})
                     .then((result) => {
