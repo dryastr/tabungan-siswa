@@ -308,6 +308,56 @@ while ($data = $sql->fetch_assoc()) {
 							</a>
 						</li>
 					<?php
+					} elseif ($data_level == "Walikelas") {
+					?>
+						<li class="treeview">
+							<a href="?page=admin">
+								<i class="fi fi-sr-fire-flame-curved"></i>
+								<span style="font-size: 17px;">Dashboard</span>
+								<span class="pull-right-container">
+								</span>
+							</a>
+						</li>
+
+						<li class="treeview">
+							<a href="#">
+								<i class="fi fi-sr-analyse-alt"></i>
+								<span style="font-size: 17px;">Master Data</span>
+								<span class="pull-right-container">
+									<i id="toggle-icon" class="fi fi-rr-angle-small-right pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+
+								<li>
+									<a href="?page=MyApp/data_siswa">
+									<i class="fi fi-sr-users-alt mr-5"></i> Siswa</a>
+								</li>
+								<li>
+									<a href="?page=MyApp/data_kelas">
+									<i class="fi fi-sr-chalkboard-user"></i> Kelas</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="treeview">
+							<a href="?page=view_tabungan">
+							<i class="fi fi-sr-piggy-bank"></i>
+								<span style="font-size: 17px;">Tabungan</span>
+								<span class="pull-right-container">
+								</span>
+							</a>
+						</li>
+
+						<li class="treeview">
+							<a href="?page=MyApp/data_profil">
+							<i class="fi fi-sr-graduation-cap"></i>	
+								<span style="font-size: 17px;">Profil Sekolah</span>
+								<span class="pull-right-container">
+								</span>
+							</a>
+						</li>
+					<?php
 					} elseif ($data_level == "Orangtua") {
 					?>
 
@@ -321,43 +371,9 @@ while ($data = $sql->fetch_assoc()) {
 						</li>
 
 						<li class="treeview">
-							<a href="#">
-								<i class="fa fa-refresh"></i>
-								<span style="font-size: 17px;">Transaksi</span>
-								<span class="pull-right-container">
-									<i id="toggle-icon" class="fi fi-rr-angle-small-right pull-right"></i>
-								</span>
-							</a>
-							<ul class="treeview-menu">
-
-								<li>
-									<a href="?page=data_setor">
-										<i class="fa fa-arrow-circle-o-down"></i>Setoran</a>
-								</li>
-								<li>
-									<a href="?page=data_tarik">
-										<i class="fa fa-arrow-circle-o-up"></i>Penarikan</a>
-								</li>
-								<li>
-									<a href="?page=view_kas">
-										<i class="fa  fa-pie-chart"></i>Info Kas</a>
-								</li>
-							</ul>
-						</li>
-
-						<li class="treeview">
 							<a href="?page=view_tabungan">
 								<i class="fa fa-book"></i>
 								<span style="font-size: 17px;">Tabungan</span>
-								<span class="pull-right-container">
-								</span>
-							</a>
-						</li>
-
-						<li class="treeview">
-							<a href="?page=laporan">
-								<i class="fa fa-file"></i>
-								<span style="font-size: 17px;">Laporan</span>
 								<span class="pull-right-container">
 								</span>
 							</a>
